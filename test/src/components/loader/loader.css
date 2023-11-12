@@ -1,0 +1,20 @@
+.loader-path {
+    stroke: #D9D9D9;
+    stroke-dasharray: 190;
+    stroke-dashoffset: 190;
+    transform-origin: 50% 50%;
+    animation: dash 1s linear infinite, rotate 1s linear infinite;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  

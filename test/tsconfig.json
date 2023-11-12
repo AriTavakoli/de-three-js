@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "outDir": "public",
+    "noEmitOnError": false,
+    "target": "ESNext",
+    "module": "ESNext",
+    "noEmit": false,
+    "moduleResolution": "node",
+    "jsx": "react-jsx",
+    "lib": [
+      "es6",
+      "dom"
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/@webflow"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": false,
+    "skipDefaultLibCheck": true,
+    "incremental": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/lib/helpers/minify.js"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

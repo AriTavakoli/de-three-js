@@ -1,0 +1,107 @@
+/* Variables */
+:root {
+  --common-border: 1px solid;
+  --common-hover-background: var(--actionSecondaryBackgroundHover);
+  --common-focus-border: var(--blueBorder);
+  --common-focus-background: var(--actionSecondaryBackground);
+}
+
+/* Base Styles */
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background4);
+  gap: var(--space-space-1, 4px);
+  border-radius: var(--border-radius, 2px);
+  border: var(--common-border) var(--border1);
+}
+
+/* Disabled State */
+.button.is-disabled { background: var(--backgroundInactive); }
+
+/* General Variants */
+.button.default, .button.ghost, .button.outline {
+  background: transparent;
+  border: var(--common-border) transparent;
+}
+
+/* Interactions */
+.button:hover { background: var(--common-hover-background); }
+.button:focus { border: var(--common-border) var(--common-focus-border); background: var(--common-focus-background); }
+
+/* A11Y Focus */
+.button.default.outline.comfortable:focus-visible,
+.button.primary.outline.comfortable:focus-visible {
+  border: var(--common-border) var(--common-focus-border);
+  background: var(--common-focus-background);
+}
+
+/* Size Variants */
+.button.compact { width: 16px; height: 16px; }
+.button.comfortable { width: 32px; height: 32px; }
+
+/* Theme Variants */
+.button.solid.primary, .button.primary.default.compact:hover { background: var(--actionPrimaryBackgroundHover); }
+.button.solid.danger, .button.danger.default.compact:hover { background: var(--redBackground); }
+
+/* Outline Styles */
+.button.outline { border: var(--common-border) var(--border4); }
+
+/* Ghost Styles */
+.button.ghost.default.compact:hover,
+.button.ghost.default.comfortable:hover,
+.button.ghost.outline.comfortable:hover,
+.button.ghost.solid.compact:hover,
+.button.solid.ghost.comfortable:hover { background: var(--background2); }
+
+/* Combined Variants */
+.button.solid.ghost.comfortable { border: var(--common-border) transparent; }
+
+
+
+/* Button with text */
+
+.button.upload:focus-visible {
+  border: var(--common-border) var(--common-focus-border);
+  background: var(--common-focus-background);
+}
+
+
+.button-text {
+  color: var(--text1);
+  text-align: center;
+  /* background-color: var(--); */
+  
+  /* Small Regular */
+  font-family: Inter;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px; /* 145.455% */
+
+}
+
+
+.scene {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-8, 8px);
+  padding: 8px;
+  background-color: var(--background4);
+  border-radius: var(--border-radius, 2px);
+  border: var(--common-border) var(--border1);
+}
+
+.upload {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-8, 8px);
+  background-color: var(--background4);
+  border-radius: var(--border-radius, 2px);
+  border: var(--common-border) var(--border1);
+}

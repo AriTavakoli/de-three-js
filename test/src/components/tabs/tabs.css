@@ -1,0 +1,101 @@
+.tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background1);
+  width: 800px;
+  gap: var(--spacing-8, 8px);
+  height: 100%;
+}
+
+.tab-list {
+  display: flex;
+  align-items: flex-start;
+  /* gap: var(--spacing-8, 8px); */
+  display: flex;
+  flex-direction: row;
+}
+.tab-list-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 784px;
+  display: flex;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  background-color: var(--background2);
+  /* gap: var(--spacing-8, 8px); */
+  border-bottom: 1px solid var(--border1);
+  justify-content: space-between;
+
+}
+
+.tab-list-item {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  color: var(--text2);
+  padding: 8px 8px;
+  cursor: pointer;
+}
+.tab-list-item:focus {
+  outline: 1px solid var(--blueBorder);
+  border-radius: var(--border-radius, 2px);
+ 
+}
+
+/* *:focus {
+    outline: 1px solid var(--blueBorder);
+} */
+
+
+.tab-list-item.active {
+  color: var(--text1);
+  font-weight: 600;
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-8, 8px);
+  width: 785px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background1);
+  width: 300px;
+  gap: var(--spacing-8, 8px);
+}
+
+
+.tab-content-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  gap: var(--spacing-8, 8px);
+  justify-content: start;
+}
+
+.no-focus-ring :focus {
+  outline: none;
+}
+
+
+/* when focused  */
+/* 
+.active {
+  border: 1px solid var(--blueBorder);
+} */
