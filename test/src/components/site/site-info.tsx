@@ -31,7 +31,7 @@ export default function SiteInfo() {
                         'Accept': 'application/json',
                     };
     
-                    const response = await axios.put('http://localhost:3000/api/addScript', {
+                    const response = await axios.put('https://de-three-js.vercel.app/api/addScript', {
                         siteId: siteInfo.siteId
                     }, { headers });
     
@@ -62,7 +62,7 @@ export default function SiteInfo() {
 
             try {
                 if (siteInfo && siteInfo.siteId) {
-                    const response = await axios.post('http://localhost:3000/api/registerScript', {
+                    const response = await axios.post('https://de-three-js.vercel.app/api/registerScript', {
                         siteId: siteInfo.siteId
                     });
                     

@@ -5,6 +5,9 @@ const BundleAnalyzerPlugin =
 require("dotenv").config();
 const consoleUtil = require("./config/utils/consoleUtil.js");
 var webpack = require("webpack");
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+
 
 const isBundleAnalyzerEnabled = process.env.BUNDLE_ANALYZER === "true";
 const colors = require("colors");
@@ -44,17 +47,25 @@ const alias = {
 module.exports = {
   devServer: {
     static: {
-      directory: path.join(__dirname, "dist"),
+      directory: path.join(__dirname, "public"),
+    },
+    headers: {
+      "Access-Control-Allow-Origin": "https://webflow.com",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, PATCH, OPTIONS",
+      "Access-Control-Allow-Headers": "X-Requested-With, content-type, Authorization"
     },
     client: {
       logging: "info",
     },
   },
   entry: "./src/index.tsx",
+ 
   output: {
-    filename: "index.js",
-    path: path.resolve(__dirname, "dist"),
+    filename: 'index.js',
+    path: path.resolve(__dirname, 'public'),
+    publicPath: '/',
   },
+  
   mode: process.env.ENV,
   resolve: {
     alias: {
@@ -94,7 +105,7 @@ module.exports = {
       },
       {
         test: /\.css$/,
-        use: ["style-loader", "css-loader"],
+        use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
         test: /\.svg$/,
@@ -127,7 +138,7 @@ module.exports = {
       },
       {
         test: /\.txt$/,
-        use: 'raw-loader', 
+        use: 'raw-loader',
 
       },
       {
@@ -161,12 +172,22 @@ module.exports = {
 
   plugins: [
     isBundleAnalyzerEnabled &&
-      new BundleAnalyzerPlugin({
-        analyzerMode: "server",
-        generateStatsFile: true,
-        openAnalyzer: process.env.BUNDLE_OPEN,
-        statsFilename: "./reports/stats.json",
-      }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: "server",
+      generateStatsFile: true,
+      openAnalyzer: process.env.BUNDLE_OPEN,
+      statsFilename: "./reports/stats.json",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "styles.css",
+    }),
+
+
+    new HtmlWebpackPlugin({
+      template: './src/template/index.html',
+      filename: 'index.html'
+    }),
+
     new webpack.ProgressPlugin((percentage, message, ...args) => {
       const percent = Math.round(percentage * 100);
       let colorFunc = percent === 100 ? colors.green : colors.blue;

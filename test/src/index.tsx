@@ -220,7 +220,6 @@ const App = () => {
             </main>
           </TabContent>
 
-
           {/* Generate Scene Config  */}
 
           <TabContent label="Generate Config">
