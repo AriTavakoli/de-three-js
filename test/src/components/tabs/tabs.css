@@ -33,9 +33,10 @@
 }
 
 .tab-list-item {
-  font-size: 11px;
-  font-style: normal;
-  font-weight: 400;
+  font-size: var(--font-size-small);
+  letter-spacing: var(--font-size-small-letter-spacing);
+  font-weight: var(--font-weight-normal);
+  
   line-height: 16px;
   color: var(--text2);
   padding: 8px 8px;
@@ -54,7 +55,6 @@
 
 .tab-list-item.active {
   color: var(--text1);
-  font-weight: 600;
 }
 
 .tab-content {

@@ -70,7 +70,7 @@ export function ThreeProvider({ children }: ThreeProviderProps) {
 
 
   const modelRef = useRef();
-
+// 
 
   const [canvasId, setCanvasId] = useState<string>('scene1');
 
@@ -88,7 +88,7 @@ export function ThreeProvider({ children }: ThreeProviderProps) {
   });
   const [assetUrl, setAssetUrl] = useState<string | null>("https://uploads-ssl.webflow.com/651a1390f46c051ae2da83ec/651df325020521fcc3c8c43c_webflow-logo.txt");
 
-  const [activeTab, setActiveTab] = useState<number>(1);
+  const [activeTab, setActiveTab] = useState<number>(0);
 
   const [lights, setLights] = useState([]);
 

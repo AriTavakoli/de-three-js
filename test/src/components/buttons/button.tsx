@@ -16,7 +16,7 @@ Webflow Button Variants:
 
 */
 
-
+// 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
     isDisabled?: boolean;
     size?: "compact" | "comfortable";

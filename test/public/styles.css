@@ -1,34 +1,718 @@
-body {
-  margin: 0;
-  background: #333;
+/*!************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/loader/loader.css ***!
+  \************************************************************************************/
+.loader-path {
+    stroke: #D9D9D9;
+    stroke-dasharray: 190;
+    stroke-dashoffset: 190;
+    transform-origin: 50% 50%;
+    animation: dash 1s linear infinite, rotate 1s linear infinite;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+/*!**************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/multi-step/components/select-element/select-element.css ***!
+  \**************************************************************************************************************************/
+.select-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    width: 300px;
+    height: 200px;
+    gap: 4px;
+    border: 1px solid var(--border2);
+    border-radius: var(--border-radius, 2px);
 }
 
-form {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+.select-text {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    text-wrap: balance;
+}
+
+/*!********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/multi-step/multi-step.css ***!
+  \********************************************************************************************/
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10vh;
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.step {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background4);
+    border-radius: 50%;
+    margin-left: 2%;
+    border : 1px solid var(--border4);
+    box-shadow: 0px 4px 8px rgba(8, 35, 48, 0.24);
+    padding-right: .5px;
+}
+
+.step:after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 45%;
+    width: 1px;
+    height: 160px;
+    background: var(--background5);
+    opacity: 0.8;
+    margin-top: 16px;
+} 
+
+ 
+ 
+
+
+.row-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    width: 100vw;
+    align-items: start;
+
+}
+
+.row-container__inner {
+    display: flex;
+    padding-top: 60px ;
+    left: 23%;
+    position: relative;
+}
+
+.step-count {
+    color : var(--text1);
+    font-size: var(--font-size-small);
+    z-index: 100;
+    
+}
+/*!********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/tabs/tabs.css ***!
+  \********************************************************************************/
+.tabs {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
-  padding: 16px;
-  font-family: sans-serif;
-  text-align: center;
-  color: #fff;
+  background-color: var(--background1);
+  width: 800px;
+  gap: var(--spacing-8, 8px);
+  height: 100%;
 }
 
-button {
-  color: #fff;
-  background: #0073E6;
-  padding: 4px 8px;
-  border: 2px solid #0073E6;
-  border-radius: 4px;
+.tab-list {
+  display: flex;
+  align-items: flex-start;
+  /* gap: var(--spacing-8, 8px); */
+  display: flex;
+  flex-direction: row;
+}
+.tab-list-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 784px;
+  display: flex;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  background-color: var(--background2);
+  /* gap: var(--spacing-8, 8px); */
+  border-bottom: 1px solid var(--border1);
+  justify-content: space-between;
+
 }
 
-button:focus {
+.tab-list-item {
+  font-size: var(--font-size-small);
+  letter-spacing: var(--font-size-small-letter-spacing);
+  font-weight: var(--font-weight-normal);
+  
+  line-height: 16px;
+  color: var(--text2);
+  padding: 8px 8px;
+  cursor: pointer;
+}
+.tab-list-item:focus {
+  outline: 1px solid var(--blueBorder);
+  border-radius: var(--border-radius, 2px);
+ 
+}
+
+/* *:focus {
+    outline: 1px solid var(--blueBorder);
+} */
+
+
+.tab-list-item.active {
+  color: var(--text1);
+}
+
+.tab-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-8, 8px);
+  width: 785px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.tab-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--background1);
+  width: 300px;
+  gap: var(--spacing-8, 8px);
+}
+
+
+.tab-content-1 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 100vh;
+  gap: var(--spacing-8, 8px);
+  justify-content: start;
+}
+
+.no-focus-ring :focus {
   outline: none;
-  border-color: #1280EE;
 }
+
+
+/* when focused  */
+/* 
+.active {
+  border: 1px solid var(--blueBorder);
+} */
+/*!*************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/components/buttons.css ***!
+  \*************************************************************************************/
+/* Variables */
+:root {
+  --common-border: 1px solid;
+  --common-hover-background: var(--actionSecondaryBackgroundHover);
+  --common-focus-border: var(--blueBorder);
+  --common-focus-background: var(--actionSecondaryBackground);
+}
+
+/* Base Styles */
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 8px;
+  background-color: var(--background4);
+  gap: 8px;
+  border-radius: var(--border-radius, 2px);
+  border: var(--common-border) var(--border1);
+}
+.button :focus {
+  background-color: var(--actionPrimaryBackgroundHover);
+}
+
+/* Disabled State */
+.button.is-disabled {
+  background: var(--backgroundInactive);
+}
+
+/* General Variants */
+.button.default,
+.button.ghost,
+.button.outline {
+  background: transparent;
+  border: var(--common-border) transparent;
+}
+
+/* Interactions */
+.button:hover {
+  background: var(--common-hover-background);
+}
+.button:focus {
+  border: var(--common-border) var(--common-focus-border);
+  background: var(--common-focus-background);
+}
+
+/* A11Y Focus */
+.button.default.outline.comfortable:focus-visible,
+.button.primary.outline.comfortable:focus-visible {
+  border: var(--common-border) var(--common-focus-border);
+  background: var(--common-focus-background);
+}
+
+/* Size Variants */
+.button.compact {
+  width: 16px;
+  height: 16px;
+}
+.button.comfortable {
+  width: 32px;
+  height: 32px;
+}
+
+/* Theme Variants */
+.button.solid.primary,
+.button.primary.default.compact:hover {
+  background: var(--actionPrimaryBackgroundHover);
+}
+.button.solid.danger,
+.button.danger.default.compact:hover {
+  background: var(--redBackground);
+}
+
+/* Outline Styles */
+.button.outline {
+  border: var(--common-border) var(--border4);
+}
+
+/* Ghost Styles */
+.button.ghost.default.compact:hover,
+.button.ghost.default.comfortable:hover,
+.button.ghost.outline.comfortable:hover,
+.button.ghost.solid.compact:hover,
+.button.solid.ghost.comfortable:hover {
+  background: var(--background2);
+}
+
+/* Combined Variants */
+.button.solid.ghost.comfortable {
+  border: var(--common-border) transparent;
+}
+
+/* Button with text */
+
+ 
+button {
+  outline: none;
+}
+
+
+
+.button-text {
+  color: var(--text1);
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Small Regular */
+  font-size: var(--font-size-small);
+  font-weight: 400;
+}
+
+.scene {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+  justify-content: space-between;
+  gap: var(--spacing-8, 8px);
+  padding: 8px;
+  border-radius: var(--border-radius, 2px);
+}
+
+.upload {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-8, 8px);
+  border-radius: var(--border-radius, 2px);
+  border: var(--common-border) var(--border1);
+}
+
+/*!*************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles/styles.css ***!
+  \*************************************************************************/
+:root {
+    --background1: #1e1e1e;
+    --background2: #2e2e2e;
+    --background3: #383838;
+    --background4: #373737;
+    --background5: #444444;
+    --backgroundInactive: #2e2e2e;
+    --backgroundInverse: #ebebeb;
+    --backgroundInput: rgba(0, 0, 0, 0.15);
+
+    --actionPrimaryBackground: #006acc;
+    --actionPrimaryBackgroundHover: #187cd9;
+    --actionSecondaryBackground: linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.1) 100%);
+    --actionSecondaryBackgroundHover: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.18) 0%,
+        rgba(255, 255, 255, 0.16) 100%
+    );
+    --actionPrimaryText: #ffffff;
+    --actionPrimaryTextHover: #ffffff;
+    --actionSecondaryText: #e0e0e0;
+    --actionSecondaryTextHover: #e0e0e0;
+
+    --border1: rgba(255, 255, 255, 0.13);
+    --border2: rgba(255, 255, 255, 0.14);
+    --border3: rgba(255, 255, 255, 0.19);
+
+    --text1: #f5f5f5;
+    --text2: #bdbdbd;
+    --text3: #a3a3a3;
+    --textInactive: #757575;
+    --textInverse: #1e1e1e;
+
+    --blueText: #8ac2ff;
+    --blueIcon: #8ac2ff;
+    --blueBorder: #007df0;
+
+    --greenBackground: #007a41;
+    --greenBackgroundHover: #0d8a4f;
+    --greenText: #63d489;
+    --greenIcon: #63d489;
+    --greenBorder: #259d4d;
+    --yellowBackground: #946b00;
+
+    --yellowBackgroundHover: #af7f00;
+    --yellowText: #f3c831;
+    --yellowIcon: #f3c831;
+    --yellowBorder: #d7a220;
+
+    --redBackground: #cf313b;
+    --redBackgroundHover: #cb3535;
+    --redText: #ff8a8a;
+    --redIcon: #ff8a8a;
+    --redBorder: #e42f3a;
+
+    --orangeBackground: #bf4704;
+    --orangeBackgroundHover: #DC95616;
+    --orangeText: #eba267;
+    --orangeIcon: #eba267;
+    --orangeBorder: #df640c;
+
+    --purpleBackground: #734ce0;
+    --purpleBackgroundHover: #815beb;
+    --purpleText: #b89eff;
+    --purpleIcon: #b89eff;
+    --purpleBorder: #875ffd;
+
+    /* Box shadows for buttons and inputs */
+    --boxShadows-action-colored: 0px 0.5px 1px 0px rgba(0, 0, 0, 0.8),
+        0px 0.5px 0.5px 0px rgba(255, 255, 255, 0.2) inset;
+    --boxShadows-action-secondary: 0px 0.5px 1px rgba(0, 0, 0, 0.8), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.12);
+    --boxShadows-input-inner: 0px 1px 1px -1px rgba(0, 0, 0, 0.13) inset, 0px 3px 3px -3px rgba(0, 0, 0, 0.17) inset,
+        0px 4px 4px -4px rgba(0, 0, 0, 0.17) inset, 0px 8px 8px -8px rgba(0, 0, 0, 0.17) inset,
+        0px 12px 12px -12px rgba(0, 0, 0, 0.13) inset, 0px 16px 16px -16px rgba(0, 0, 0, 0.13) inset;
+
+    --boxShadows-menu: 0px 0.5px 0.5px 0px rgba(255, 255, 255, 0.12) inset, 0px 12px 24px 8px rgba(0, 0, 0, 0.04),
+        0px 8px 16px 4px rgba(0, 0, 0, 0.04), 0px 4px 8px 2px rgba(0, 0, 0, 0.04), 0px 2px 6px 0px rgba(0, 0, 0, 0.04),
+        0px 0px 1px 0px rgba(0, 0, 0, 0.25);
+
+    --input-inner-shadow: 0px 1px 1px -1px rgba(0, 0, 0, 0.13) inset, 0px 3px 3px -3px rgba(0, 0, 0, 0.17) inset,
+        0px 4px 4px -4px rgba(0, 0, 0, 0.17) inset, 0px 8px 8px -8px rgba(0, 0, 0, 0.17) inset,
+        0px 12px 12px -12px rgba(0, 0, 0, 0.13) inset, 0px 16px 16px -16px rgba(0, 0, 0, 0.13) inset;
+
+    --menu-shadow: 0px 12px 24px 8px rgba(0, 0, 0, 0.08), 0px 8px 16px 4px rgba(0, 0, 0, 0.08),
+        0px 4px 8px 2px rgba(0, 0, 0, 0.08), 0px 2px 6px 0px rgba(0, 0, 0, 0.08),
+        0px -0.5px 0.5px 0px rgba(0, 0, 0, 0.12) inset, 0px 0.5px 0.5px 0px rgba(255, 255, 255, 0.12) inset;
+
+    /* TYPOGRAPHY */
+    --font-stack: "Inter", sans-serif;
+    --font-size-small: 11.5px;
+    --font-size-small-letter-spacing: -0.115px;
+    --font-size-large: 12.5px;
+    --font-weight-normal: 400;
+    --font-weight-medium: 600;
+    --border-radius: 4px;
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-stack);
+
+    --leva-radii-lg: 2px !important;
+
+    /* change scroll bar colors */
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: var(--background1);
+        border-radius: 2px;
+        width: 1px;
+        border: 1px solid var(--border1);
+        transition: background-color 100ms ease 0s;
+    }
+
+    /* Thumb on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: #aaa;
+    }
+
+    /* Thumb on active */
+    ::-webkit-scrollbar-thumb:active {
+        background-color: #321a1a;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        background: var(--background4);
+    }
+}
+
+.sr-only {
+    display: none;
+}
+
+/* * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+} */
+
+body {
+    font-family: var(--font-stack);
+    font-size: var(--font-size-large);
+    color: var(--text1);
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+}
+
+input {
+    display: flex;
+    padding: var(--space-space-1, 4px);
+    align-items: center;
+    gap: var(--border-radius, 2px);
+    flex: 1 0 0;
+    border-radius: var(--border-radius, 2px);
+    border: 1px solid var(--border3);
+    background: var(--background1);
+    color: var(--text1);
+}
+
+input:focus-visible {
+    outline: 1px solid var(--blueBorder) !important;
+    background: var(--background3) !important;
+}
+
+input:focus-within {
+    border: 1px solid var(--blueBorder) !important;
+    background: var(--background3) !important;
+}
+
+.leva-c-dkRbIj:focus-within {
+    border: 1px solid var(--blueBorder) !important;
+}
+
+.leva-c-dosbYs:focus-within {
+    border: 1px solid var(--blueBorder) !important;
+}
+
+/* Three js Scene */
+
+/* Track */
+
+.canvas-background {
+    background-color: aliceblue;
+    width: 240px;
+    height: 100%;
+    color: white;
+}
+
+.range-label {
+    display: flex;
+    flex-direction: row;
+    /* width: 100%; */
+    color: azure;
+    justify-content: space-around;
+}
+
+.upload {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-8, 8px);
+    background-color: var(--background2);
+    border-radius: var(--border-radius, 2px);
+    border: var(--common-border) var(--border1);
+}
+
+.activate-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--spacing-8, 8px);
+    background-color: var(--background2);
+    border-radius: var(--border-radius, 2px);
+    border: var(--common-border) var(--border1);
+    padding: 8px 8px;
+}
+
+.merge-container {
+    display: flex;
+    flex-direction: row;
+    gap: var(--spacing-8, 8px);
+    align-items: center;
+    justify-content: center;
+}
+
+.code-container {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius, 2px);
+    padding: 8px 8px;
+    width: 100%;
+    max-width: 100vw;
+    overflow: auto;
+}
+
+.code-editor {
+    width: 80%;
+    max-height: 70vh;
+    background-color: var(--background4);
+    overflow: hidden;
+    overflow: scroll;
+    border-radius: var(--border-radius);
+    padding: 16px 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.code-button__container {
+    width: 84%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-8, 8px);
+    justify-content: flex-end;
+}
+
+.upload-container {
+    display: flex;
+    position: relative;
+    height: 40px;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: start;
+    gap: 8px;
+    z-index: 100;
+}
+
+.leva-container {
+    display: flex;
+    width: 300px;
+    margin-top: -3px;
+    height: 560px;
+}
+
+.canvas-button-container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-8, 8px);
+    width: 100%;
+    height: 538px;
+}
+
+.scene-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: start;
+    position: relative;
+    margin: 0 0 0 0;
+
+    width: 100%;
+    gap: 8px;
+    height: 100vh;
+}
+
+.three-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    gap: 8px;
+    width: 800px;
+    height: 100vh;
+    background-color: var(--background1);
+    overflow-x: hidden;
+}
+.three-container::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.three-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 2px;
+    margin: 0 2px;
+    transition: background-color 100ms ease 0s;
+}
+
+.three-container::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+}
+
+.three-container::-webkit-scrollbar-thumb:active {
+    background-color: #888;
+}
+
+.three-container::-webkit-scrollbar-corner {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.row-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: start;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+    /* width: 100%; */
+    height: 100%;
+}
+
+.leva-c-dosbYs :focus-within {
+    border: 1px solid var(--blueBorder) !important;
+}
+

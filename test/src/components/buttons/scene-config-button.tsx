@@ -28,7 +28,7 @@ export const SceneConfigButton: React.FC<IconButtonWithTextProps> = ({
   };
 
   return (
-    <button tabIndex={0} className="button scene" onClick={handleClick}>
+    <button tabIndex={0} className="button" onClick={handleClick}>
       <span className = "button-text">{buttonText}</span>
       {iconId && <Icon name={iconId} size={iconSize} color={iconColor} />}
       {fileType && onFileChange && (

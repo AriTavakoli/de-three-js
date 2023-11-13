@@ -38,7 +38,7 @@ const LevaConfig = ({ store }) => {
       theme: folder({
         accent1: '#0073e6',
         accent2: '#1EA7FD',
-        elevation1: '#212121',
+        elevation1: '#444444',
         elevation2: '#1E1E1E',
         elevation3: '#373737',
         highlight1: '#ff4785',

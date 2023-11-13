@@ -67,10 +67,9 @@ function Upload() {
     )
 }
 
-
 function Download() {
     return (
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" width ="16" height = "16" aria-labelledby="downloadTitle">
+            <svg xmlns="http://www.w3.org/2000/svg" color = "lightgrey" viewBox="0 0 256 256" role="img" width ="16" height = "16" aria-labelledby="downloadTitle">
                 <title id="downloadTitle">Download icon</title>
                 <rect width="256" height="256" fill="none" />
                 <line x1="128" y1="152" x2="128" y2="40" fill="none" stroke="currentColor" stroke-linecap="round"
@@ -159,7 +158,7 @@ function Performance() {
 
 function Light() {
     return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="16" height = "16">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="16" height = "16" color = "lightgrey" fill="none">
             <rect width="256" height="256" fill="none" />
             <line x1="128" y1="40" x2="128" y2="16" fill="none" stroke="currentColor" stroke-linecap="round"
                 stroke-linejoin="round" stroke-width="16" />

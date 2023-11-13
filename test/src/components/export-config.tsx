@@ -17,8 +17,8 @@ const ExportConfig = ({ config, store }) => {
     if (window.hljs && codeRef.current) {
       window.hljs.highlightBlock(codeRef.current);
     }
-}, [config]);
-
+  }, [config]);
+  
   const handleCopyClick = () => {
     const range = document.createRange();
     range.selectNode(codeRef.current);
@@ -37,13 +37,13 @@ const ExportConfig = ({ config, store }) => {
       <div className="code-container">
         <div className="code-button__container">
           {isCopied && <span style={{ color: 'green' }}>Copied!</span>}
-          <IconButtonWithText buttonText="Copy Code" iconId="code" iconSize={16} onClick={handleCopyClick} />
-          <IconButtonWithText buttonText="Add Script" iconId="code" iconSize={16} onClick={() => { setSiteScriptTrigger(true) }} />
-          <IconButtonWithText buttonText="Register Script" iconId="code" iconSize={16} onClick={() => { setSiteRegisterTrigger((prev) => !prev); console.log('what the heck') }} />
+          <IconButtonWithText buttonText="Copy Code" iconId="code" onClick={handleCopyClick} />
+          <IconButtonWithText buttonText="Add Script" iconId="code" onClick={() => { setSiteScriptTrigger(true) }} />
+          <IconButtonWithText buttonText="Register Script" iconId="code" onClick={() => { setSiteRegisterTrigger((prev) => !prev); console.log('what the heck') }} />
         </div>
         <pre className="code-editor">
           <code ref={codeRef} >
-             {sceneConfig }
+            {sceneConfig}
           </code>
         </pre>
       </div>

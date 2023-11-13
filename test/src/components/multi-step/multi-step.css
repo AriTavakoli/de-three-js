@@ -11,7 +11,6 @@
 
 .step {
     position: relative;
-    margin-bottom: 100px;
     width: 32px;
     height: 32px;
     display: flex;
@@ -22,6 +21,7 @@
     margin-left: 2%;
     border : 1px solid var(--border4);
     box-shadow: 0px 4px 8px rgba(8, 35, 48, 0.24);
+    padding-right: .5px;
 }
 
 .step:after {
@@ -32,24 +32,11 @@
     width: 1px;
     height: 160px;
     background: var(--background5);
-    opacity: 0.24;
+    opacity: 0.8;
     margin-top: 16px;
 } 
 
  
-.step span:first-of-type {
-    font-size: 10px;
-    line-height: 32px;
-    border: 1px solid var(--border4);
-    letter-spacing: 0.25px;
-}
-
-.step span:last-of-type {
-    display: none;
-    position: relative;
-    background: #373f51;
-}
-
  
 
 
@@ -72,7 +59,7 @@
 
 .step-count {
     color : var(--text1);
-    font-size: 12px;
+    font-size: var(--font-size-small);
     z-index: 100;
     
 }

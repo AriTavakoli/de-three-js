@@ -5,6 +5,7 @@ const BundleAnalyzerPlugin =
 require("dotenv").config();
 const consoleUtil = require("./config/utils/consoleUtil.js");
 var webpack = require("webpack");
+
 const isBundleAnalyzerEnabled = process.env.BUNDLE_ANALYZER === "true";
 const colors = require("colors");
 
@@ -34,10 +35,7 @@ if (process.env.BUNDLE_ANALYZER === "true") {
 }
 
 const alias = {
-
   '@/': path.resolve(__dirname, './src/'),
-
-
 };
 
 
@@ -46,7 +44,7 @@ const alias = {
 module.exports = {
   devServer: {
     static: {
-      directory: path.join(__dirname, "public"),
+      directory: path.join(__dirname, "dist"),
     },
     client: {
       logging: "info",
@@ -55,7 +53,7 @@ module.exports = {
   entry: "./src/index.tsx",
   output: {
     filename: "index.js",
-    path: path.resolve(__dirname, "public"),
+    path: path.resolve(__dirname, "dist"),
   },
   mode: process.env.ENV,
   resolve: {
