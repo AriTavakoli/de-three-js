@@ -48,7 +48,7 @@ export default async function handler(
     const response = await axios.request(reqOptions);
     res.status(200).json({ result: response.data });
   } catch (error) {
-    res.status(500).json({ result: 'An error occurred', message: error.message });
+    res.status(500).json({ message: error.message });
   }
 
 }
